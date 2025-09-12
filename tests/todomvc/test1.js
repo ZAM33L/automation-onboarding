@@ -282,6 +282,7 @@ Scenario('todo item activities', async({ I }) => {
   I.see('2 items left', '.todo-count');
 
   //deleting spcific item and verifying its visibility
+  //for an active item
   //delete an item in "all" page
   I.moveCursorTo(`//li[@data-testid = 'todo-item']//*[text()='Correct the guide']`);
   I.click(`//li[@data-testid = 'todo-item']//label[text()='Correct the guide']/following-sibling::button`)
@@ -295,8 +296,133 @@ Scenario('todo item activities', async({ I }) => {
   I.click(`//ul[@class='filters']//li//a[@href='#/completed']`)
   I.dontSeeElement(`//li[@data-testid = 'todo-item']//*[text()='Correct the guide']`)
   I.see('1 item left', '.todo-count');
-  
-  
+  //tryin this same thing in other tabs
+  //
+  I.click(`//ul[@class='filters']//li//a[@href='#/active']`)
+  I.fillField(`//input[@id='todo-input']`, 'Correct the guide');
+  I.pressKey('Enter');
+  I.seeElement(`//label[text()='Correct the guide']/ancestor::li[@data-testid = 'todo-item']`);
+  I.see('2 items left', '.todo-count');
+  I.moveCursorTo(`//li[@data-testid = 'todo-item']//*[text()='Correct the guide']`);
+  I.click(`//li[@data-testid = 'todo-item']//label[text()='Correct the guide']/following-sibling::button`)
+  I.dontSeeElement(`//li[@data-testid = 'todo-item']//*[text()='Correct the guide']`)
+  I.see('1 item left', '.todo-count');
+  I.click(`//ul[@class='filters']//li//a[@href='#/']`)
+  I.dontSeeElement(`//li[@data-testid = 'todo-item']//*[text()='Correct the guide']`)
+  I.see('1 item left', '.todo-count');
+  I.click(`//ul[@class='filters']//li//a[@href='#/completed']`)
+  I.dontSeeElement(`//li[@data-testid = 'todo-item']//*[text()='Correct the guide']`)
+  I.see('1 item left', '.todo-count');
+  //
+  I.click(`//ul[@class='filters']//li//a[@href='#/completed']`)
+  I.fillField(`//input[@id='todo-input']`, 'Correct the guide');
+  I.pressKey('Enter');
+  I.click(`//ul[@class='filters']//li//a[@href='#/']`)
+  I.seeElement(`//label[text()='Correct the guide']/ancestor::li[@data-testid = 'todo-item']`);
+  I.see('2 items left', '.todo-count');
+  I.moveCursorTo(`//li[@data-testid = 'todo-item']//*[text()='Correct the guide']`);
+  I.click(`//li[@data-testid = 'todo-item']//label[text()='Correct the guide']/following-sibling::button`)
+  I.dontSeeElement(`//li[@data-testid = 'todo-item']//*[text()='Correct the guide']`)
+  I.see('1 item left', '.todo-count');
+  I.click(`//ul[@class='filters']//li//a[@href='#/active']`)
+  I.dontSeeElement(`//li[@data-testid = 'todo-item']//*[text()='Correct the guide']`)
+  I.see('1 item left', '.todo-count');
+  I.click(`//ul[@class='filters']//li//a[@href='#/']`)
+  I.dontSeeElement(`//li[@data-testid = 'todo-item']//*[text()='Correct the guide']`)
+  I.see('1 item left', '.todo-count');
+
+  //deleting spcific item and verifying its visibility
+  //for an completed item
+  //delete an item in "all" page
+  I.fillField(`//input[@id='todo-input']`, 'Publish the guide');
+  I.pressKey('Enter');
+  I.seeElement(`//li[@data-testid = 'todo-item']//*[text()='Publish the guide']`)
+  I.see('2 items left', '.todo-count');
+  I.moveCursorTo(`//li[@data-testid = 'todo-item']//*[text()='Publish the guide']`);
+  I.click(`//li[@data-testid = 'todo-item']//label[text()='Publish the guide']/preceding-sibling::*`)
+  I.seeElement(`//label[text()='Publish the guide']/ancestor::li[@data-testid = 'todo-item'  and @class='completed']`);
+  I.see('1 item left', '.todo-count');
+  I.moveCursorTo(`//li[@data-testid = 'todo-item']//*[text()='Publish the guide']`);
+  I.click(`//li[@data-testid = 'todo-item']//label[text()='Publish the guide']/following-sibling::button`)
+  I.dontSeeElement(`//label[text()='Publish the guide']/ancestor::li[@data-testid = 'todo-item'  and @class='completed']`);
+  I.see('1 item left', '.todo-count');
+  //in "active" page
+  I.click(`//ul[@class='filters']//li//a[@href='#/active']`)
+  I.fillField(`//input[@id='todo-input']`, 'Publish the guide');
+  I.pressKey('Enter');
+  I.seeElement(`//li[@data-testid = 'todo-item']//*[text()='Publish the guide']`)
+  I.see('2 items left', '.todo-count');
+  I.moveCursorTo(`//li[@data-testid = 'todo-item']//*[text()='Publish the guide']`);
+  I.click(`//li[@data-testid = 'todo-item']//label[text()='Publish the guide']/preceding-sibling::*`)
+  I.dontSeeElement(`//label[text()='Publish the guide']/ancestor::li[@data-testid = 'todo-item'  and @class='completed']`);
+  I.click(`//ul[@class='filters']//li//a[@href='#/completed']`)
+  I.seeElement(`//label[text()='Publish the guide']/ancestor::li[@data-testid = 'todo-item'  and @class='completed']`);
+  I.see('1 item left', '.todo-count');
+  I.moveCursorTo(`//li[@data-testid = 'todo-item']//*[text()='Publish the guide']`);
+  I.click(`//li[@data-testid = 'todo-item']//label[text()='Publish the guide']/following-sibling::button`)
+  I.dontSeeElement(`//label[text()='Publish the guide']/ancestor::li[@data-testid = 'todo-item'  and @class='completed']`);
+  I.see('1 item left', '.todo-count');
+
+  //in "completed" page
+  I.click(`//ul[@class='filters']//li//a[@href='#/completed']`)
+  I.fillField(`//input[@id='todo-input']`, 'Publish the guide');
+  I.pressKey('Enter');
+  I.dontSeeElement(`//li[@data-testid = 'todo-item']//*[text()='Publish the guide']`)
+  I.see('2 items left', '.todo-count');
+  I.click(`//ul[@class='filters']//li//a[@href='#/']`)
+  I.seeElement(`//li[@data-testid = 'todo-item']//*[text()='Publish the guide']`)
+  I.see('2 items left', '.todo-count');
+  I.moveCursorTo(`//li[@data-testid = 'todo-item']//*[text()='Publish the guide']`);
+  I.click(`//li[@data-testid = 'todo-item']//label[text()='Publish the guide']/preceding-sibling::*`)
+  I.seeElement(`//li[@data-testid = 'todo-item' and @class='completed']//*[text()='Publish the guide' ]`)
+  I.see('1 item left', '.todo-count');
+  I.click(`//ul[@class='filters']//li//a[@href='#/completed']`)
+  I.seeElement(`//li[@data-testid = 'todo-item' and @class='completed']//*[text()='Publish the guide']`)
+  I.moveCursorTo(`//li[@data-testid = 'todo-item' and @class='completed']//*[text()='Publish the guide']`);
+  I.click(`//li[@data-testid = 'todo-item']//label[text()='Publish the guide']/following-sibling::button`)
+  I.dontSeeElement(`//label[text()='Publish the guide' and @class='completed']/ancestor::li[@data-testid = 'todo-item']`);
+  I.see('1 item left', '.todo-count');
+
+  //editing an active element and checking if it is edited in all and active
+  I.click(`//ul[@class='filters']//li//a[@href='#/']`)
+  I.fillField(`//input[@id='todo-input']`, 'Publish the guide');
+  I.pressKey('Enter');
+  I.see('2 items left', '.todo-count');
+
+  I.moveCursorTo(`//li[@data-testid = 'todo-item']//*[text()='Publish the guide']`);
+  I.doubleClick(`//li[@data-testid='todo-item']//label[text()='Publish the guide']/parent::div`);
+  I.seeElementInDOM(`//li[@data-testid='todo-item']//input[@data-testid='text-input']`);
+  I.fillField(`//li[@data-testid='todo-item']//input[@data-testid='text-input']`,'updated . proofread the guide');
+  I.pressKey('Enter')
+
+  I.seeElement(`//li[@data-testid='todo-item']//label[text()='updated . proofread the guide']`);
+  I.dontSee(`//li[@data-testid='todo-item']//label[text()='Publish the guide']`);
+  I.see('2 items left', '.todo-count');
+
+  I.click(`//ul[@class='filters']//li//a[@href='#/active']`)
+  I.seeElement(`//li[@data-testid='todo-item']//label[text()='updated . proofread the guide']`);
+  I.dontSee(`//li[@data-testid='todo-item']//label[text()='Publish the guide']`);
+  I.see('2 items left', '.todo-count');
+
+
+  //editing an completed element and checking if it is edited in all and active
+  I.click(`//ul[@class='filters']//li//a[@href='#/']`)
+  I.see('2 items left', '.todo-count');
+
+  I.moveCursorTo(`//li[@data-testid = 'todo-item']//*[text()='updated . proofread the guide']`);
+  I.click(`//li[@data-testid = 'todo-item']//label[text()='updated . proofread the guide']/preceding-sibling::*`)
+  I.seeElement(`//li[@data-testid = 'todo-item' and @class='completed']//*[text()='updated . proofread the guide' ]`)
+  I.see('1 item left', '.todo-count');
+
+  I.doubleClick(`//li[@data-testid='todo-item']//label[text()='updated . proofread the guide']/parent::div`);
+  I.seeElementInDOM(`//li[@data-testid='todo-item']//input[@data-testid='text-input']`);
+  I.fillField(`//li[@data-testid='todo-item']//input[@data-testid='text-input']`,'again updated . proofread the guide');
+  I.pressKey('Enter')
+
+  I.seeElement(`//li[@data-testid='todo-item']//label[text()='again updated . proofread the guide']`);
+  I.dontSee(`//li[@data-testid='todo-item']//label[text()='updated . proofread the guide']`);
+  I.see('1 item left', '.todo-count');
+
 });
 
 
