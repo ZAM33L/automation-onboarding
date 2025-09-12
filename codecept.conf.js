@@ -15,7 +15,12 @@ exports.config = {
       browser: 'chromium',
       url: 'http://localhost',
       show: true,
-    }
+      waitForTimeout: 50000,         
+    waitForNavigation: 15000
+    },
+    AssertWrapper: {
+       "require": "codeceptjs-assert"
+     }
   },
   
   include: {
