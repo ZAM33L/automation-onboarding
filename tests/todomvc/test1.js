@@ -280,6 +280,23 @@ Scenario('todo item activities', async({ I }) => {
   I.click(`//ul[@class='filters']//li//a[@href='#/']`)
   I.seeElement(`//label[text()='Correct the guide']/ancestor::li[@data-testid = 'todo-item']`);
   I.see('2 items left', '.todo-count');
+
+  //deleting spcific item and verifying its visibility
+  //delete an item in "all" page
+  I.moveCursorTo(`//li[@data-testid = 'todo-item']//*[text()='Correct the guide']`);
+  I.click(`//li[@data-testid = 'todo-item']//label[text()='Correct the guide']/following-sibling::button`)
+  I.dontSeeElement(`//li[@data-testid = 'todo-item']//*[text()='Correct the guide']`)
+  I.see('1 item left', '.todo-count');
+  //checking in other pages
+  I.click(`//ul[@class='filters']//li//a[@href='#/active']`)
+  I.dontSeeElement(`//li[@data-testid = 'todo-item']//*[text()='Correct the guide']`)
+  I.see('1 item left', '.todo-count');
+  //
+  I.click(`//ul[@class='filters']//li//a[@href='#/completed']`)
+  I.dontSeeElement(`//li[@data-testid = 'todo-item']//*[text()='Correct the guide']`)
+  I.see('1 item left', '.todo-count');
+  
+  
 });
 
 
