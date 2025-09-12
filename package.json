@@ -16,5 +16,8 @@
         "@codeceptjs/ui": "^1.2.0",
         "codeceptjs": "^3.6.7",
         "playwright": "^1.49.0"
+    },
+    "dependencies": {
+        "codeceptjs-assert": "^0.0.5"
     }
 }
