@@ -32,5 +32,14 @@ Scenario('loading and visibility', async ({ I }) => {
   console.log("5.1 column header accessed")
   I.seeElement(`//span[text()='Category']/ancestor::div[8]/following-sibling::div//span[text()='Chairs']`)
   console.log("5.2 row header accessed")
+  //test 5 - accessing main option tabs
+  I.seeElement(`//ol//span[1]`)
+  console.log("6.1 home tab accessed")
+  I.seeElement(`//ol//span[1]`)
+  console.log("6.2 insert tab accessed")
+  I.seeElement(`//ol//span[1]`)
+  console.log("6.3 design tab accessed")
+  I.seeElement(`//ol//span[1]`)
+  console.log("6.4 explore tab accessed")
 
 })
