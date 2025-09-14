@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-Feature('inforiver matrix');
+Feature('inforiver matrix - test 1');
 
 Scenario('loading and visibility', async ({ I }) => {
   //test 1 - page load
