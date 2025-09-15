@@ -1,0 +1,23 @@
+page
+https://www.saucedemo.com/v1/
+
+name
+//form//input[@placeholder='Username'] 
+or
+(//form//input)[1]
+
+password
+//form//input[@placeholder='Password'] 
+or
+(//form//input)[2]
+
+login button
+//form//input[@value='LOGIN']
+or
+//form//input[3]
+
+error msg
+//h3[contains(normalize-space(.), 'do not match')]
+
+logged in
+I.seeInCurrentUrl('/v1/inventory.html');
