@@ -6,6 +6,7 @@ Before(async()=>{
     FillColor.pageLoad()
 })
 
-Scenario('Fill color icon default', async()=>{
+Scenario('Fill color options', async()=>{
     await FillColor.FillColorIconDefault()
+    await FillColor.FillColorModalOption()
 })

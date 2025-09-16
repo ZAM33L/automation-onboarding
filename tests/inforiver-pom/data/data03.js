@@ -14,6 +14,10 @@ module.exports = {
     matrixCellValue02:'2.34',
     matrixCellValue03:'294.87',
     matrixCellValue04:'164.09',
+    matrixCellValue05:'2.51',
+    matrixCellValue06:'40.45',
+    matrixCellValue07:'0.63',
+    matrixCellValue08:'-14.04',
 
     yearId00: '2011',//column header
     metricId00: 'Profit',//column subheader
@@ -31,7 +35,7 @@ module.exports = {
 
     italicClass:'italic',
     italicResultStyle:'font-style: italic',
-
+    paletteColor:'#118dff',
 
 
 }
