@@ -36,6 +36,7 @@ module.exports = {
 
     italicClass:'italic',
     italicResultStyle:'font-style: italic',
+    paletteColor:'#118dff',
 
 
 

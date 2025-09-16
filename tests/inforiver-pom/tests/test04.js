@@ -8,4 +8,5 @@ Before(async()=>{
 
 Scenario('Font color icon default', async()=>{
     await FontColor.FontColorIconDefault()
+    await FontColor.FontColorModalOption()
 })

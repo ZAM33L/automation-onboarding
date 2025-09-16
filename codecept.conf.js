@@ -16,7 +16,7 @@ exports.config = {
       url: 'http://localhost',
       show: true,
       waitForTimeout: 10000, 
-      getPageTimeout: 80000  
+      getPageTimeout: 90000  
     },
     AssertWrapper: {
        "require": "codeceptjs-assert"

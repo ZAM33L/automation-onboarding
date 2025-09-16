@@ -22,9 +22,15 @@ const xpaths04 = {
 
     fillcolorIcon:`(//div[@data-label = 'Home']//descendant::div[contains(@class,'colorpicker')]/descendant::i)[1]`,
     fillColorDefaultColor:`//div[@data-label='Home']//div[contains(@class,'colorpicker')]//i[contains(@style, 'border-bottom') and contains(@style, 'rgb(255, 255, 0)')]`,
+    fillColorDropdownArrow:`(//div[@data-label = 'Home']//descendant::div[contains(@class,'colorpicker')]/descendant::i)[2]`,
+    fillColorModal:`//div[@class='bf-ui-colopicker-modal']`,
+    fillColorPaletteColor:`//div[@class='bf-ui-colopicker-modal']/div[@class='bf-ui-colopicker-Palette']//*[local-name()='svg']//*[local-name()='rect' and @fill='${data04.paletteColor}']`,
 
     fontcolorIcon:`(//div[@data-label = 'Home']//descendant::div[contains(@class,'colorpicker')]/descendant::i)[3]`,
     fontcolorDefaultColor:`//div[@data-label='Home']//div[contains(@class,'colorpicker')]//i[contains(@style, 'border-bottom') and contains(@style, 'rgb(255, 0, 10)')]`,
+    fontColorDropdownArrow:`(//div[@data-label = 'Home']//descendant::div[contains(@class,'colorpicker')]/descendant::i)[4]`,
+    fontColorModal:`//div[@class='bf-ui-colopicker-modal']`,
+    fontColorPaletteColor:`//div[@class='bf-ui-colopicker-modal']/div[@class='bf-ui-colopicker-Palette']//*[local-name()='svg']//*[local-name()='rect' and @fill='${data04.paletteColor}']`,
 };
 
 module.exports = xpaths04;
