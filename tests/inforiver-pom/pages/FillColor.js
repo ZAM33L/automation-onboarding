@@ -1,22 +1,33 @@
-const xpaths03
+const xpaths03 = require('../xpaths/xpaths03')
+const data03 = require('../data/data03')
+const { I } = inject()
+const assert = require('assert')
 
-//test 5 - coloring a cell
+class FillColor {
+    async pageLoad() {
+        await I.amOnPage(data03.webPage);
+        await I.say("01 . page loaded")
+    }
+    //test 5 - coloring a cell
     //5.1 recent color shown in icon
-    I.seeElement(`(//span[@role='cell' and text()='9.65'])[1]`);
-    console.log("5.1 a cell in matrix loaded");
-    I.click(`(//span[@role='cell' and text()='9.65'])[1]`);
-    I.wait(1);
-    //
-    console.log("5.1 recent color");
-    I.waitForElement("(//div[@data-label = 'Home']//descendant::div[contains(@class,'colorpicker')]/descendant::i)[1]", 5);
-    I.moveCursorTo("(//div[@data-label = 'Home']//descendant::div[contains(@class,'colorpicker')]/descendant::i)[1]");
-    I.wait(1);
-    I.click("(//div[@data-label = 'Home']//descendant::div[contains(@class,'colorpicker')]/descendant::i)[1]");
-    console.log("5.1.1 fill color>recent color clicked");
-    I.wait(1);
-    I.seeElement("((//span[@role='cell' and text()='9.65'])[1]/parent::div/parent::div)[contains(@style, 'background: rgb(255, 255, 0)')]");
-    console.log("5.1.2 cell value colored from recent color shown in icon");
-    
+    async FillColorIconDefault() {
+        await I.seeElement(`(//span[@role='cell' and text()='${data03.matrixCellValue03}'])[1]`);
+        await I.click(`(//span[@role='cell' and text()='${data03.matrixCellValue03}'])[1]`);
+        await I.wait(1);
+        //
+
+        await I.waitForElement(xpaths03.fillcolorIcon, 5);
+        await I.moveCursorTo(xpaths03.fillcolorIcon);
+        await I.wait(1);
+        await I.click(xpaths03.fillcolorIcon);
+
+        await I.wait(1);
+
+        await I.seeElement(`((//span[@role='cell' and text()='${data03.matrixCellValue03}'])[1]/parent::div/parent::div)[contains(@style, 'background: rgb(255, 255, 0)')]`);
+    }
+
+
+
     // //5.2
     // //with helper function
     // // Hex to RGB converter function
@@ -137,3 +148,7 @@ const xpaths03
 
     // I.seeElement(`((//span[@role='cell' and text()='1.98'])[1]/parent::div/parent::div)[contains(@style, 'background: ${fillColorRgb2}')]`);
     // console.log("5.3.13 cell value colored from dropdown icon");
+
+}
+
+module.exports = new FillColor

@@ -19,6 +19,9 @@ const xpaths03 = {
     boldOption:`//div[@data-label='${data03.tabListItem01}']//span[contains(@class,'${data03.boldClass}')]`,
     underlineOption:`//div[@data-label='${data03.tabListItem01}']//span[contains(@class,'${data03.underlineClass}')]`,
     italicOption:`//div[@data-label='${data03.tabListItem01}']//span[contains(@class,'${data03.italicClass}')]`,
+
+    fillcolorIcon:`(//div[@data-label = 'Home']//descendant::div[contains(@class,'colorpicker')]/descendant::i)[1]`,
+    fillColorDefaultColor:`//div[@data-label='Home']//div[contains(@class,'colorpicker')]//i[contains(@style, 'border-bottom') and contains(@style, 'rgb(255, 255, 0)')]`
 };
 
 module.exports = xpaths03;
