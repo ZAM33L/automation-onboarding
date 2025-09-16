@@ -1,0 +1,1 @@
+(//span[text()='Category']/ancestor::div[contains(@class,'matrix-table-header')]/following-sibling::div//span[text()='Furnishings'])

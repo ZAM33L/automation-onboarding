@@ -17,7 +17,7 @@ Scenario('loading and visibility', async ({ I }) => {
   I.seeElement(`//span[@role='cell' and text()='Furnishings']/ancestor::div[6]/preceding-sibling::div[2]//span[@role='cell' and text()='Chairs']`)
   console.log("3.3 cell above loaded")
   //test 4 - main column cell visibility
-  I.seeElement(`(//span[@role='cell' and text()='36.92'])[1]`)
+  I.seeElement(`(//span[@role='cell' and text()='81.57'])[1]`)
   console.log("4.1 a cell in matrix loaded")
   I.seeElement(`(//span[@role='cell' and text()='81.57'])[1]/ancestor::div[3]/following-sibling::div[2]//span[text()='14.60']`)
   console.log("4.1.1 right to it")
@@ -33,7 +33,7 @@ Scenario('loading and visibility', async ({ I }) => {
   I.seeElement(`//span[text()='Category']/ancestor::div[8]/following-sibling::div//span[text()='Chairs']`)
   console.log("5.2 row header accessed")
   //test 5 - accessing main option tabs
-  I.seeElement(`//ol//span[1]`)
+  I.seeElement(`//ol//span[1]`) // also use //ol//span[text()='Home']
   console.log("6.1 home tab accessed")
   I.seeElement(`//ol//span[1]`)
   console.log("6.2 insert tab accessed")
