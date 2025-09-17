@@ -9,4 +9,5 @@ Before(async()=>{
 Scenario('Fill color options', async()=>{
     await FillColor.FillColorIconDefault()
     await FillColor.FillColorModalOption()
+    await FillColor.FillColorCustomColor()
 })

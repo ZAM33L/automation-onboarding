@@ -55,6 +55,61 @@ class FontColor {
 
     }
 
+    async FontColorCustomColor() {
+        I.seeElement(`(//span[@role='cell' and text()='${data03.matrixCellValue06}'])[1]`);
+
+        I.click(`(//span[@role='cell' and text()='${data03.matrixCellValue06}'])[1]`);
+        I.wait(1);
+
+        I.waitForElement(xpaths03.fillColorDropdownArrow, 5);
+        I.moveCursorTo(xpaths03.fillColorDropdownArrow);
+        I.wait(1);
+        I.click(xpaths03.fillColorDropdownArrow);
+
+        I.wait(1);
+        I.seeElement(xpaths03.fillColorModal);
+
+        I.waitForElement(xpaths03.fillColorCustomColorBtn, 5);
+        I.moveCursorTo(xpaths03.fillColorCustomColorBtn);
+        I.wait(1);
+        I.click(xpaths03.fillColorCustomColorBtn);
+        
+        I.wait(1);
+        I.seeElement(xpaths03.fillColorCustomColorModal);
+
+        //entering type
+
+        I.waitForElement(xpaths03.fillColorCustomColorTypeDiv, 5);
+        I.moveCursorTo(xpaths03.fillColorCustomColorTypeDiv);
+        I.wait(1);
+        I.click(xpaths03.fillColorCustomColorTypeDiv);
+
+        I.wait(1);
+        I.seeElement(xpaths03.fillColorCustomColorTypeDivMenu);
+
+        const combinedXPath = xpaths03.fillColorCustomColorTypeDivMenu + xpaths03.fillColorCustomColorTypeDivMenuOption;
+        I.seeElement(combinedXPath);
+        I.click(combinedXPath)
+        I.wait(1)
+
+        //
+        I.seeElement(xpaths03.fillColorCustomColorTypeDivMenuResult)
+
+        //entering value
+
+        I.waitForElement(xpaths03.fillColorCustomColorColorCodeInput, 5);
+        I.moveCursorTo(xpaths03.fillColorCustomColorColorCodeInput);
+        I.wait(1);
+        I.click(xpaths03.fillColorCustomColorColorCodeInput);
+
+        I.wait(1);
+        I.fillField(xpaths03.fillColorCustomColorColorCodeInput,data03.paletteColor);
+
+        I.seeElement(xpaths03.fillColorModalSaveBtn);
+        I.click(xpaths03.fillColorModalSaveBtn);
+        //
+        I.seeElement(`((//span[@role='cell' and text()='${data03.matrixCellValue06}'])[1]/parent::div/parent::div)[contains(@style, 'background: rgb(17, 141, 255)')]`);
+    }
 
 }
 
