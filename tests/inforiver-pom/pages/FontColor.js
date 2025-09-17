@@ -56,59 +56,58 @@ class FontColor {
     }
 
     async FontColorCustomColor() {
-        I.seeElement(`(//span[@role='cell' and text()='${data03.matrixCellValue06}'])[1]`);
+        I.seeElement(`(//span[@role='cell' and text()='${data04.matrixCellValue08}'])[1]`);
 
-        I.click(`(//span[@role='cell' and text()='${data03.matrixCellValue06}'])[1]`);
+        I.click(`(//span[@role='cell' and text()='${data04.matrixCellValue08}'])[1]`);
         I.wait(1);
 
-        I.waitForElement(xpaths03.fillColorDropdownArrow, 5);
-        I.moveCursorTo(xpaths03.fillColorDropdownArrow);
+        I.waitForElement(xpaths04.fontColorDropdownArrow, 5);
+        I.moveCursorTo(xpaths04.fontColorDropdownArrow);
         I.wait(1);
-        I.click(xpaths03.fillColorDropdownArrow);
+        I.click(xpaths04.fontColorDropdownArrow);
 
         I.wait(1);
-        I.seeElement(xpaths03.fillColorModal);
+        I.seeElement(xpaths04.fontColorModal);
 
-        I.waitForElement(xpaths03.fillColorCustomColorBtn, 5);
-        I.moveCursorTo(xpaths03.fillColorCustomColorBtn);
+        I.waitForElement(xpaths04.fontColorCustomColorBtn, 5);
+        I.moveCursorTo(xpaths04.fontColorCustomColorBtn);
         I.wait(1);
-        I.click(xpaths03.fillColorCustomColorBtn);
+        I.click(xpaths04.fontColorCustomColorBtn);
         
         I.wait(1);
-        I.seeElement(xpaths03.fillColorCustomColorModal);
-
+        I.seeElement(xpaths04.fontColorCustomColorModal)
         //entering type
 
-        I.waitForElement(xpaths03.fillColorCustomColorTypeDiv, 5);
-        I.moveCursorTo(xpaths03.fillColorCustomColorTypeDiv);
+        I.waitForElement(xpaths04.fontColorCustomColorTypeDiv, 5);
+        I.moveCursorTo(xpaths04.fontColorCustomColorTypeDiv);
         I.wait(1);
-        I.click(xpaths03.fillColorCustomColorTypeDiv);
+        I.click(xpaths04.fontColorCustomColorTypeDiv);
 
         I.wait(1);
-        I.seeElement(xpaths03.fillColorCustomColorTypeDivMenu);
+        I.seeElement(xpaths04.fontColorCustomColorTypeDivMenu);
 
-        const combinedXPath = xpaths03.fillColorCustomColorTypeDivMenu + xpaths03.fillColorCustomColorTypeDivMenuOption;
+        const combinedXPath = xpaths04.fontColorCustomColorTypeDivMenu + xpaths04.fontColorCustomColorTypeDivMenuOption;
         I.seeElement(combinedXPath);
         I.click(combinedXPath)
-        I.wait(1)
+        I.waitont
 
         //
-        I.seeElement(xpaths03.fillColorCustomColorTypeDivMenuResult)
+        I.seeElement(xpaths04.fontColorCustomColorTypeDivMenuResult)
 
         //entering value
 
-        I.waitForElement(xpaths03.fillColorCustomColorColorCodeInput, 5);
-        I.moveCursorTo(xpaths03.fillColorCustomColorColorCodeInput);
+        I.waitForElement(xpaths04.fontColorCustomColorColorCodeInput, 5);
+        I.moveCursorTo(xpaths04.fontColorCustomColorColorCodeInput);
         I.wait(1);
-        I.click(xpaths03.fillColorCustomColorColorCodeInput);
+        I.click(xpaths04.fontColorCustomColorColorCodeInput);
 
         I.wait(1);
-        I.fillField(xpaths03.fillColorCustomColorColorCodeInput,data03.paletteColor);
+        I.fillField(xpaths04.fontColorCustomColorColorCodeInput,data04.paletteColor);
 
-        I.seeElement(xpaths03.fillColorModalSaveBtn);
-        I.click(xpaths03.fillColorModalSaveBtn);
+        I.seeElement(xpaths04.fontColorModalSaveBtn);
+        I.click(xpaths04.fontColorModalSaveBtn);
         //
-        I.seeElement(`((//span[@role='cell' and text()='${data03.matrixCellValue06}'])[1]/parent::div/parent::div)[contains(@style, 'background: rgb(17, 141, 255)')]`);
+        I.seeElement(`(//span[@role='cell' and text()='${data04.matrixCellValue08}'])[1][contains(@style, 'color: rgb(17, 141, 255)')]`);
     }
 
 }

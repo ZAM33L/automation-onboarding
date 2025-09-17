@@ -24,21 +24,32 @@ const xpaths04 = {
     fillColorDefaultColor: `//div[@data-label='Home']//div[contains(@class,'colorpicker')]//i[contains(@style, 'border-bottom') and contains(@style, 'rgb(255, 255, 0)')]`,
     fillColorDropdownArrow: `(//div[@data-label = 'Home']//descendant::div[contains(@class,'colorpicker')]/descendant::i)[2]`,
     fillColorModal: `//div[@class='bf-ui-colopicker-modal']`,
-    fillColorPaletteColor: `//div[@class='bf-ui-colopicker-modal']/div[@class='bf-ui-colopicker-Palette']//*[local-name()='svg']//*[local-name()='rect' and @fill='${data03.paletteColor}']`,
+    fillColorPaletteColor: `//div[@class='bf-ui-colopicker-modal']/div[@class='bf-ui-colopicker-Palette']//*[local-name()='svg']//*[local-name()='rect' and @fill='${data04.paletteColor}']`,
+
     fillColorCustomColorBtn: `//div[@class='bf-ui-colopicker-modal']/div[@class='bf-ui-colopicker-Palette']/following-sibling::div[contains(@class,'bf-ui-colopicker-custom-picker-div')]`,
     fillColorCustomColorModal: `//div[contains(@class,'bf-ui-colopicker-custom-modal')]`,
     fillColorCustomColorTypeDiv: `//div[@aria-haspopup='listbox']`,
     fillColorCustomColorTypeDivMenu: `//div[@role='menu']`,
-    fillColorCustomColorTypeDivMenuOption: `//span[text()='${data03.colorCode01}']`,
-    fillColorCustomColorTypeDivMenuResult: `//div[@aria-haspopup='listbox']//*[text()='${data03.colorCode01}']`,
+    fillColorCustomColorTypeDivMenuOption: `//span[text()='${data04.colorCode01}']`,
+    fillColorCustomColorTypeDivMenuResult: `//div[@aria-haspopup='listbox']//*[text()='${data04.colorCode01}']`,
     fillColorCustomColorColorCodeInput: `//div[@aria-haspopup='listbox']/../following-sibling::div/input`,
     fillColorModalSaveBtn: `//button[text()='Save']`,
+
 
     fontcolorIcon: `(//div[@data-label = 'Home']//descendant::div[contains(@class,'colorpicker')]/descendant::i)[3]`,
     fontcolorDefaultColor: `//div[@data-label='Home']//div[contains(@class,'colorpicker')]//i[contains(@style, 'border-bottom') and contains(@style, 'rgb(255, 0, 10)')]`,
     fontColorDropdownArrow: `(//div[@data-label = 'Home']//descendant::div[contains(@class,'colorpicker')]/descendant::i)[4]`,
     fontColorModal: `//div[@class='bf-ui-colopicker-modal']`,
     fontColorPaletteColor: `//div[@class='bf-ui-colopicker-modal']/div[@class='bf-ui-colopicker-Palette']//*[local-name()='svg']//*[local-name()='rect' and @fill='${data04.paletteColor}']`,
+
+    fontColorCustomColorBtn: `//div[@class='bf-ui-colopicker-modal']/div[@class='bf-ui-colopicker-Palette']/following-sibling::div[contains(@class,'bf-ui-colopicker-custom-picker-div')]`,
+    fontColorCustomColorModal: `//div[contains(@class,'bf-ui-colopicker-custom-modal')]`,
+    fontColorCustomColorTypeDiv: `//div[@aria-haspopup='listbox']`,
+    fontColorCustomColorTypeDivMenu: `//div[@role='menu']`,
+    fontColorCustomColorTypeDivMenuOption: `//span[text()='${data04.colorCode01}']`,
+    fontColorCustomColorTypeDivMenuResult: `//div[@aria-haspopup='listbox']//*[text()='${data04.colorCode01}']`,
+    fontColorCustomColorColorCodeInput: `//div[@aria-haspopup='listbox']/../following-sibling::div/input`,
+    fontColorModalSaveBtn: `//button[text()='Save']`,
 };
 
 module.exports = xpaths04;
