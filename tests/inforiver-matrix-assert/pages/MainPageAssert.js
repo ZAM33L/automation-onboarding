@@ -3,7 +3,7 @@ const data05 = require('../data/data05')
 const xpaths05 = require('../xpaths/xpaths05')
 const assert = require('assert');
 
-class mainPage {
+class MainPage {
 
     async pageLoad() {
         await I.amOnPage(data05.webPage);
@@ -53,4 +53,4 @@ class mainPage {
     }
 
 }
-module.exports = new mainPage()
+module.exports = new MainPage()

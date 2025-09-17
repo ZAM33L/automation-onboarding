@@ -1,12 +1,12 @@
-const MainPage = require('../pages/MainPage')
+const MainPageAssert = require('../pages/MainPageAssert')
 
 Feature('Test 1 - asserting main page and elements')
 Before(async()=>{
-    await MainPage.pageLoad()
+    await MainPageAssert.pageLoad()
 })
 Scenario('Scenario 1 - visibility of elements', async() =>{
-    await MainPage.assertTableHeading()//table heading
-    await MainPage.assertTableHeaders()//table headers
-    await MainPage.assertCells()       //table cells
-    await MainPage.assertTabList()     //tab lists
+    await MainPageAssert.assertTableHeading()//table heading
+    await MainPageAssert.assertTableHeaders()//table headers
+    await MainPageAssert.assertCells()       //table cells
+    await MainPageAssert.assertTabList()     //tab lists
 })
