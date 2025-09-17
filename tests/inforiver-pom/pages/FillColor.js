@@ -21,7 +21,7 @@ class FillColor {
         await I.click(xpaths03.fillcolorIcon);
 
         await I.wait(1);
-
+        
         await I.seeElement(`((//span[@role='cell' and text()='${data03.matrixCellValue03}'])[1]/parent::div/parent::div)[contains(@style, 'background: rgb(255, 255, 0)')]`);
     }
 
