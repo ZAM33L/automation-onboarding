@@ -7,6 +7,7 @@ Scenario('loading and visibility', async ({ I }) => {
   I.amOnPage('https://inforiver-webtest-premium.azurewebsites.net/?csvLocation=CF_REG-03.csv&config=CF_REG-03.json&URLLoad=true');
   console.log('1.page loaded')
   //test 2 - table header being visible
+  I.wait(1)
   I.seeElement(`//div[@id='headerEditor']//span[text()='Sum of Profit, Sum of Quantity, Sum of Sales by Category, Sub-Category, Year']`)
   console.log('2 header loaded')
   //test 3 - main column cell visibility
