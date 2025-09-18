@@ -7,7 +7,7 @@ Before(async () => {
   await login2Page.open();
 });
 
-Scenario('proper signup', async () => {
+Scenario('proper login', async () => {
   await login2Page.loginToThePage();
   await login2Page.clickLogin();
   await login2Page.loginResult();  
